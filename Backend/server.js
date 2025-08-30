@@ -7,6 +7,7 @@ const userRoute = require("./routes/UserRoute");
 const productRoute = require("./routes/productRoute")
 const CartRoute = require("./routes/CartRoute");
 const orderRoute = require("./routes/OrderRoute");
+const couponRoute = require("./routes/CouponRoute")
 //App Config
 const app = express();
 const port = process.env.PORT || 4000
@@ -23,6 +24,8 @@ app.use('/api/user',userRoute)
 app.use('/api/product',productRoute)
 app.use('/api/cart',CartRoute)
 app.use('/api/order',orderRoute)
+app.use('/api/coupon',couponRoute)
+
 
 
 

@@ -16,7 +16,10 @@ const ShopContextProvider = (props) => {
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
     const [products,setProducts] = useState([]);
+    const [discount, setDiscount] = useState(0)
+    const [appliedCoupon, setAppliedCoupon] = useState(null)
     const [token,setToken] = useState('');
+    const [couponCode, setCouponCode] = useState('')
     const addToCart = async (itemId, size) => {
 
         if (!size) {
@@ -147,7 +150,7 @@ const ShopContextProvider = (props) => {
         addToCart, updateQuantity,
         cartItems,setCartItems,  
         getCartCount, getCartAmount,
-        backendUrl, setToken,token
+        backendUrl, setToken,token,discount,setDiscount,appliedCoupon, setAppliedCoupon,couponCode, setCouponCode 
 
     }
 

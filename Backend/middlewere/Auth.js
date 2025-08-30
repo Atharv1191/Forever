@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 const authUser = async(req,res,next)=>{
     const {token} = req.headers;
     if(!token){
-       return res.status(500).json({
+       return res.json({
         success:false,
         message:"Not authorized Login agin"
        })  
