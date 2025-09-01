@@ -1,12 +1,18 @@
 // routes/couponRoutes.js
 const express = require("express");
-const { createCoupon, validateCoupon } = require("../controllers/CouponController");
+const { createCoupon, validateCoupon, getCoupons, getCouponDetails } = require("../controllers/CouponController");
 const authUser = require("../middlewere/Auth");
 const adminAuth = require("../middlewere/adminAuth");
 
 const router = express.Router();
 
-router.post("/create", adminAuth, createCoupon); // only admin
-router.post("/validate",authUser, validateCoupon); // user applies coupon
+// Only admin can create
+router.post("/create", adminAuth, createCoupon);
 
+// User applies coupon
+router.post("/validate", authUser, validateCoupon);
+
+// 🆕 User can view all available coupons
+router.get("/list",authUser, getCoupons);
+router.get('/coupon-details/:code',authUser,  getCouponDetails);
 module.exports = router;

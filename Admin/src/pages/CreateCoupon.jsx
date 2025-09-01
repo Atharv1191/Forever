@@ -99,7 +99,7 @@ const CreateCoupon = ({ backendUrl, token }) => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="bg-black text-white py-2 rounded hover:bg-black-700"
         >
           Create Coupon
         </button>

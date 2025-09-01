@@ -17,6 +17,7 @@ const couponSchema = new mongoose.Schema({
   minOrderAmount: { type: Number, default: 0 }, // optional minimum order
 
   expiryDate: { type: Date, required: true },
+  maxDiscount: { type: Number, default: null },
   
   isActive: { type: Boolean, default: true }
 }, { timestamps: true });
